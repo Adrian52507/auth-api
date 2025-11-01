@@ -6,5 +6,9 @@ export const pool = mysql.createPool({
   uri: process.env.MYSQL_URL,
   waitForConnections: true,
   connectionLimit: 5,
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: true
+  }
 });
+
